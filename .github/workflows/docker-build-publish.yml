@@ -25,7 +25,7 @@ jobs:
     with:
       dockerfile: docker/Dockerfile
       checkout_ref: ${{ github.event.inputs.ref }}
-      forceBuild: 'true'
+      forceBuild: true
     secrets: inherit
 
   docker-txsim-build:
@@ -37,5 +37,5 @@ jobs:
       dockerfile: docker/txsim/Dockerfile
       packageName: txsim
       checkout_ref: ${{ github.event.inputs.ref }}
-      forceBuild: 'true'
+      forceBuild: true
     secrets: inherit
