@@ -21,34 +21,31 @@ jobs:
     permissions:
       contents: write
       packages: write
-    uses: chatton/.github/.github/workflows/reusable_dockerfile_pipeline.yml@9809e1871c3f3c02090e9a943f4549e1a07d6764
+    uses: chatton/.github/.github/workflows/reusable_dockerfile_pipeline.yml@c66f3849905ca6dd1ddbe3e4bd3150a710d1a3ce
     with:
       dockerfile: docker/Dockerfile
       checkout_ref: ${{ github.event.inputs.ref }}
-      forceBuild: true
     secrets: inherit
 
   docker-multiplexer-build:
     permissions:
       contents: write
       packages: write
-    uses: chatton/.github/.github/workflows/reusable_dockerfile_pipeline.yml@9809e1871c3f3c02090e9a943f4549e1a07d6764
+    uses: chatton/.github/.github/workflows/reusable_dockerfile_pipeline.yml@c66f3849905ca6dd1ddbe3e4bd3150a710d1a3ce
     with:
       dockerfile: docker/multiplexer.Dockerfile
       checkout_ref: ${{ github.event.inputs.ref }}
       packageName: celestia-app-multiplexer
       buildArgs: "TARGETOS=linux TARGETARCH=amd64"
-      forceBuild: true
     secrets: inherit
 
   docker-txsim-build:
     permissions:
       contents: write
       packages: write
-    uses: chatton/.github/.github/workflows/reusable_dockerfile_pipeline.yml@9809e1871c3f3c02090e9a943f4549e1a07d6764
+    uses: chatton/.github/.github/workflows/reusable_dockerfile_pipeline.yml@c66f3849905ca6dd1ddbe3e4bd3150a710d1a3ce
     with:
       dockerfile: docker/txsim/Dockerfile
       packageName: txsim
       checkout_ref: ${{ github.event.inputs.ref }}
-      forceBuild: true
     secrets: inherit
